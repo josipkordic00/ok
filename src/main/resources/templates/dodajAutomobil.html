@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dodaj automobil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    form {
+      background: white;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      margin-top: 10px;
+      display: block;
+      color: #666;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      box-sizing: border-box; /* Includes padding in width */
+    }
+
+
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #4a54e1;
+    }
+  </style>
+</head>
+<body>
+<div th:replace="~{navbar :: navbar}"></div>
+<h1>Uredi automobil</h1>
+<form th:action="@{/automobili}" th:object="${automobil}" method="post">
+  <label for="marka">Marka:</label>
+  <input type="text" id="marka" th:field="*{marka}" required />
+
+  <label for="model">Model:</label>
+  <input type="text" id="model" th:field="*{model}" required></textarea>
+
+  <label for="godina">Godina proizvodnje:</label>
+  <input type="text" id="godina" th:field="*{godina}" required></textarea>
+
+  <label for="boja">Boja:</label>
+  <input type="text" id="boja" th:field="*{boja}" required></textarea>
+
+  <label for="snaga">Snaga motora:</label>
+  <input type="number" id="snaga" th:field="*{snaga}" required />
+
+  <button type="submit">Objavi automobil</button>
+</form>
+</body>
+</html>

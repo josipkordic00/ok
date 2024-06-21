@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+<h1>User Profile</h1>
+<div>
+    <p><strong>ID:</strong> <span th:text="${korisnik.id}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${korisnik.email}"></span></p>
+    <p><strong>Username:</strong> <span th:text="${korisnik.korisnickoIme}"></span></p>
+    <p><strong>First Name:</strong> <span th:text="${korisnik.ime}"></span></p>
+    <p><strong>Last Name:</strong> <span th:text="${korisnik.prezime}"></span></p>
+</div>
+</body>
+</html>
